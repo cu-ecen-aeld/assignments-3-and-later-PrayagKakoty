@@ -2,7 +2,7 @@ CC := $(CROSS_COMPILE)gcc
 CFLAGS := -Wall -Werror
 
 TARGET := writer
-SRC := writer.c
+SRC := finder-app/writer.c
 OBJ := writer.o
 
 all: $(TARGET)
