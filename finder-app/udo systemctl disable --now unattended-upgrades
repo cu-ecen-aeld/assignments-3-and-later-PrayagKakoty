@@ -1,0 +1,12 @@
+[0;1;32m●[0m unattended-upgrades.service - Unattended Upgrades Shutdown
+     Loaded: loaded (/lib/systemd/system/unattended-upgrades.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Fri 2026-06-05 10:47:42 IST; 12min ago
+       Docs: man:unattended-upgrade(8)
+   Main PID: 645 (unattended-upgr)
+      Tasks: 2 (limit: 9429)
+     Memory: 13.2M
+        CPU: 118ms
+     CGroup: /system.slice/unattended-upgrades.service
+             └─645 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+
+Warning: some journal files were not opened due to insufficient permissions.
