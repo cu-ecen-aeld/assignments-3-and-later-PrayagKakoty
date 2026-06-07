@@ -111,22 +111,21 @@ sudo mknod -m 666 ${OUTDIR}/${ROOT_DIR}/dev/null c 1 3
 sudo mknod -m 600 ${OUTDIR}/${ROOT_DIR}/dev/console c 5 1
 
 # TODO: Clean and build the writer utility
-FINDER_APP=${HOME}/coursera/assignment-1-PrayagKakoty/finder-app/
 echo "Makeing writer.c"
-cd ${FINDER_APP}
+cd ${FINDER_APP_DIR}
 make clean
 make CROSS_COMPILE=${CROSS_COMPILE}
 
 # TODO: Copy the finder related scripts and executables to the /home directory
 # on the target rootfs
-cp -v ${FINDER_APP}/writer ${OUTDIR}/${ROOT_DIR}/home
-cp -v ${FINDER_APP}/finder.sh ${OUTDIR}/${ROOT_DIR}/home
-cp -v ${FINDER_APP}/finder-test.sh ${OUTDIR}/${ROOT_DIR}/home
+cp -v ${FINDER_APP_DIR}/writer ${OUTDIR}/${ROOT_DIR}/home
+cp -v ${FINDER_APP_DIR}/finder.sh ${OUTDIR}/${ROOT_DIR}/home
+cp -v ${FINDER_APP_DIR}/finder-test.sh ${OUTDIR}/${ROOT_DIR}/home
 mkdir ${OUTDIR}/${ROOT_DIR}/home/conf
-cp -v ${FINDER_APP}/../conf/username.txt ${OUTDIR}/${ROOT_DIR}/home/conf
-cp -v ${FINDER_APP}/../conf/assignment.txt ${OUTDIR}/${ROOT_DIR}/home/conf
+cp -v ${FINDER_APP_DIR}/../conf/username.txt ${OUTDIR}/${ROOT_DIR}/home/conf
+cp -v ${FINDER_APP_DIR}/../conf/assignment.txt ${OUTDIR}/${ROOT_DIR}/home/conf
 
-cp -v ${FINDER_APP}/autorun-qemu.sh ${OUTDIR}/${ROOT_DIR}/home
+cp -v ${FINDER_APP_DIR}/autorun-qemu.sh ${OUTDIR}/${ROOT_DIR}/home
 
 #Modify finder-test.sh to look at conf/assignment.txt instead of ../conf/assignment.txt
 sed -i 's|\.\./conf/assignment\.txt|conf/assignment.txt|g' "${OUTDIR}/${ROOT_DIR}/home/finder-test.sh"
