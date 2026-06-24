@@ -86,8 +86,8 @@ void* thread_func(void *args){
 		memcpy(packet + packet_len, buffer, bytes_read);
 		packet_len += bytes_read;
 
-		if(buffer[bytes_read-1] == '\n'){
-
+		//if(buffer[bytes_read-1] == '\n'){
+		if(packet_len > 0 && packet[packet_len - 1] == '\n'){
 			pthread_mutex_lock(&file_mutex);
 
 			size_t bytes_wrote = fwrite(packet, 1, packet_len, fd);
