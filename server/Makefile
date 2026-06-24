@@ -1,8 +1,9 @@
 # Is compiled by the “all” and “default” target of a Makefile in the “server” directory 
 # supports cross compilation, placing the executable file in the “server” directory 
 # named aesdsocket.
-CC := $(CROSS_COMPILE)gcc
-CFLAGS := -g -Wall -Werror
+CC ?= $(CROSS_COMPILE)gcc
+CFLAGS ?= -g -Wall -Werror
+LDFLAGS ?=
 
 TARGET := aesdsocket
 SRC := aesdsocket.c
