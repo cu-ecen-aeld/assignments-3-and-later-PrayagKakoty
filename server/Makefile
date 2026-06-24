@@ -14,7 +14,7 @@ default: all
 all: $(TARGET)
 
 $(TARGET): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^
 
 $(OBJ): $(SRC)
 	$(CC) $(CFLAGS) -c $< -o $@
